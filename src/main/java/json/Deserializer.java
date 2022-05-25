@@ -8,8 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * json olvasas class
- *
+ *Deserializes json document into a Java object.
  * @param <T> the type of the elements
  */
 public abstract class Deserializer<T> {

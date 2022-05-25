@@ -10,4 +10,6 @@ public class GameSettings {
     final static int BRICK_WIDTH = 560;
 
     final static int BRICK_HEIGHT = 200;
+
+    final static double DIFFICULTY = 0.10;
 }

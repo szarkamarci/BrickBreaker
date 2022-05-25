@@ -81,7 +81,7 @@ public class Controller{
             if(!bricks.isEmpty()){
                 bricks.removeIf(brick -> checkCollisionBrick(brick));
             } else {
-                timeline.stop();
+                restart();
             }
 
             checkCollisionScene(scene);
@@ -160,7 +160,7 @@ public class Controller{
             }
 
             //Make the game harder
-            slider.setWidth(slider.getWidth() - (0.10 * slider.getWidth()));
+            slider.setWidth(slider.getWidth() - (DIFFICULTY * slider.getWidth()));
             //Removes the brick that collided with the ball
             scene.getChildren().remove(brick);
             score++;
@@ -236,9 +236,16 @@ public class Controller{
     /**
      * Checks if the ball collided with the bottom zone
      */
+
+
     public void checkCollisionBottomZone(){
         if(ball.getBoundsInParent().intersects(bottomZone.getBoundsInParent())){
-            timeline.stop();
+            restart();
+        }
+    }
+
+     void restart(){
+        timeline.stop();
             bricks.forEach(brick -> scene.getChildren().remove(brick));
             bricks.clear();
             startButton.setVisible(true);
@@ -257,6 +264,5 @@ public class Controller{
             logger.debug("final score: {}", score);
             logger.trace("Game over");
             logger.trace("Score set to zero");
-        }
     }
 }

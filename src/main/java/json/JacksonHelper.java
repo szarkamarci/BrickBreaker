@@ -22,7 +22,7 @@ public class JacksonHelper {
     private static final ObjectMapper MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
 
     /**
-     * json olvasas
+     * Reads json.
      * @param in
      * @param elementClass
      * @param <T>
@@ -35,7 +35,7 @@ public class JacksonHelper {
     }
 
     /**
-     * json helyenek meghatarozasa
+     * Searching for json file.
      * @param elementClass
      * @param resource
      * @param <T>

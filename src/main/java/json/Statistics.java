@@ -2,7 +2,7 @@ package json;
 
 public class Statistics extends Deserializer<StatisticsStruct> {
     /**
-     * Searching for json files
+     * Constructor for Statistics class.
      */
     public Statistics() {
         super(StatisticsStruct.class, "statistics.json");
